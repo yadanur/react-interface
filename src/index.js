@@ -10,17 +10,6 @@ import 'bootstrap/dist/js/bootstrap.js';
 import * as serviceWorker from './serviceWorker';
 
 
-function MyApp (){
-  return(
-    <>
-      <div>
-        <h1>Hello World!</h1>
-      </div>
-    </>
-  );
-
-
-}
 
 ReactDOM.render(
   
