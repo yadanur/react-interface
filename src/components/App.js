@@ -31,7 +31,10 @@ class App extends Component {
   
   render(){
     const listItems=this.state.myAppointments.map(item => 
-    <div>{item.petName}</div>);
+    <div>
+      <div>{item.petName}</div>
+      <div>{item.ownerName}</div>
+    </div>);
     return (
       <main className="page bg-white" id="petratings">
       <div className="container">
