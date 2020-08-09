@@ -3,14 +3,30 @@ import '../css/App.css';
 import AddAppointments from './AddAppointments';//import AddAppointments class from the AddAppointments.js file
 import SearchAppointments from './SearchAppointments';
 import ListAppointments from './ListAppointments';
+import { result } from 'lodash';
 
 class App extends Component {
   
   constructor(){
     super(); //super lets you use this statement
     this.state={
-      myName:"Yusuf"
+      myAppointments: []
     }
+  }
+  //using fetch in a lifecycle method
+  componentDidMount(){
+    fetch('./data.json')
+    .then (response => response.json())
+    .then (result => {
+      const apts = result.map (item => {
+        return item;
+      })
+      this.setState({
+        myAppointments:apts
+      });
+
+    });
+
   }
   
   render(){
@@ -20,7 +36,6 @@ class App extends Component {
         <div className="row">
           <div className="col-md-12 bg-white">
             <div className="container">
-              {this.state.myName}
               <AddAppointments />
               <SearchAppointments />
               <ListAppointments />
@@ -34,4 +49,3 @@ class App extends Component {
 }
 
 export default App;
-//test comment 6
