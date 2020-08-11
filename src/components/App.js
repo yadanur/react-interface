@@ -10,7 +10,8 @@ class App extends Component {
   constructor(){
     super(); //super lets you use this statement
     this.state={
-      myAppointments: []
+      myAppointments: [],
+      lastIndex:0
     }
   }
   //using fetch in a lifecycle method
@@ -19,6 +20,8 @@ class App extends Component {
     .then (response => response.json())
     .then (result => {
       const apts = result.map (item => {
+        item.aptId=this.state.lastIndex;
+        this.setState({lastIndex:this.state.lastIndex+1});
         return item;
       })
       this.setState({
@@ -48,6 +51,6 @@ class App extends Component {
   }
 }
 
-//"Test comment son"
+
 
 export default App;
