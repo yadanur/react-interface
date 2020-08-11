@@ -48,6 +48,6 @@ class App extends Component {
   }
 }
 
-//"Test comment"
+//"Test comment2"
 
 export default App;
