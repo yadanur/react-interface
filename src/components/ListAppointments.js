@@ -20,7 +20,6 @@ class ListAppointments extends Component{
                             <span className="apt-date ml-auto">
                                 {item.aptDate}
                             </span>
-                        
                         </div>
 
                         <div className="owner-name">
