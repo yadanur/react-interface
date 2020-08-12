@@ -4,6 +4,7 @@ import AddAppointments from './AddAppointments';//import AddAppointments class f
 import SearchAppointments from './SearchAppointments';
 import ListAppointments from './ListAppointments';
 import { result } from 'lodash';
+import {without} from 'lodash'
 
 class App extends Component {
   
@@ -13,6 +14,17 @@ class App extends Component {
       myAppointments: [],
       lastIndex:0
     }
+    this.deleteAppointment=this.deleteAppointment.bind(this);
+  }
+
+  deleteAppointment(apt){
+    let temporaryApts = this.state.myAppointments;
+    temporaryApts = without (temporaryApts, apt);
+
+    this.setState({
+      myAppointments:temporaryApts
+    });
+
   }
   //using fetch in a lifecycle method
   componentDidMount(){
@@ -41,7 +53,8 @@ class App extends Component {
             <div className="container">
               <AddAppointments />
               <SearchAppointments />
-              <ListAppointments appointments={this.state.myAppointments}/>
+              <ListAppointments appointments={this.state.myAppointments}
+              deleteAppointment={this.deleteAppointment}/>
             </div>
           </div>
         </div>
