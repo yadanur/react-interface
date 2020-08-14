@@ -112,4 +112,4 @@ class AddAppointments extends Component {
 }
 
 export default AddAppointments;
-//test
+//iyi alistin 
