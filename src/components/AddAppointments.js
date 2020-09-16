@@ -19,8 +19,8 @@ class AddAppointments extends Component {
   handleAdd(e) {
     e.preventDefault();
     let tempApt={
-      petname: this.state.petName,
-      ownername:this.state.ownerName,
+      petName: this.state.petName,
+      ownerName:this.state.ownerName,
       aptDate:this.state.aptDate+' '+ this.state.aptTime,
       aptNotes:this.state.aptNotes
     }
