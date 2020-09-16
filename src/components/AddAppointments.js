@@ -4,6 +4,7 @@ import {FaPlus} from 'react-icons/fa';
 class AddAppointments extends Component {
 
   constructor(){
+    super();
     this.state={
       petName:'',
       ownerName:'',
@@ -11,6 +12,17 @@ class AddAppointments extends Component {
       aptTime:'',
       aptNotes:''
     }
+    this.handleChange=this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const target =e.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
     render(){
         return (
